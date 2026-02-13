@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITALIQ | Hidratación Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --dark: #050505;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --whatsapp: #25d366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+        body { background-color: #0b0b0b; color: #ffffff; overflow-x: hidden; }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo { font-weight: 900; font-size: 1.8rem; letter-spacing: -1px; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .nav-phone { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; border: 1px solid var(--primary); padding: 8px 20px; border-radius: 50px; transition: 0.3s; }
+        .nav-phone:hover { background: var(--primary); color: var(--dark); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 0 20px;
+        }
+
+        .hero h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; line-height: 1; text-transform: uppercase; margin-bottom: 20px; }
+        .hero p { max-width: 600px; font-size: 1.2rem; color: #ccc; margin-bottom: 40px; }
+
+        /* Botones Especiales */
+        .btn-main {
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            color: var(--dark);
+            padding: 20px 45px;
+            border-radius: 50px;
+            font-weight: 900;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+        .btn-main:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(79, 172, 254, 0.6); }
+
+        /* WhatsApp Flotante */
+        .wsp-fixed {
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--whatsapp); color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 35px; text-decoration: none; z-index: 1000;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .wsp-fixed:hover { transform: scale(1.15) rotate(10deg); }
+
+        /* Características */
+        .features { padding: 100px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .card { 
+            background: var(--card-bg); 
+            padding: 50px; border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center; transition: 0.3s;
+        }
+        .card:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--primary); }
+        .card i { font-size: 3.5rem; margin-bottom: 25px; color: var(--primary); }
+        .card h3 { font-size: 1.8rem; margin-bottom: 15px; }
+
+        /* Seccion Producto */
+        .details { padding: 100px 10%; display: flex; align-items: center; flex-wrap: wrap; gap: 80px; }
+        .details-img { flex: 1; min-width: 350px; position: relative; }
+        .details-img img { width: 100%; border-radius: 40px; filter: grayscale(30%); }
+        .details-text { flex: 1; min-width: 350px; }
+        .details-text h2 { font-size: 3rem; margin-bottom: 30px; line-height: 1.1; }
+        .details-text p { font-size: 1.1rem; color: #aaa; margin-bottom: 30px; }
+
+        footer { padding: 80px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background: #000; }
+        .phone-big { display: block; font-size: 2.5rem; font-weight: 900; color: var(--primary); text-decoration: none; margin: 20px 0; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .details-text h2 { font-size: 2.2rem; }
+            .phone-big { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/593979760990?text=Hola!%20Deseo%20información%20sobre%20las%20bebidas%20hidratantes" class="wsp-fixed" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <nav>
+        <div class="logo">VITALIQ</div>
+        <a href="tel:0979760990" class="nav-phone">
+            <i class="fas fa-phone"></i> 0979760990
+        </a>
+    </nav>
+
+    <section class="hero">
+        <h1>VIVE AL MÁXIMO</h1>
+        <p>No es solo agua, es combustible inteligente para tu cuerpo. Recuperación en tiempo récord con electrolitos de grado farmacéutico.</p>
+        <a href="https://wa.me/593979760990" class="btn-main">ORDENA POR WHATSAPP</a>
+    </section>
+
+    <section class="features">
+        <div class="card">
+            <i class="fas fa-bolt-lightning"></i>
+            <h3>Energía</h3>
+            <p>Activación celular inmediata sin el bajón del azúcar.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-microscope"></i>
+            <h3>Ciencia</h3>
+            <p>Fórmula osmótica balanceada para una absorción 3x más rápida.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-shield-heart"></i>
+            <h3>Salud</h3>
+            <p>Sin colorantes artificiales. Endulzado naturalmente.</p>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="details-img">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Hidratación">
+        </div>
+        <div class="details-text">
+            <h2>Diseñada para el <span style="color: var(--primary);">alto rendimiento.</span></h2>
+            <p>Ya sea que estés en el gimnasio, en la oficina o bajo el sol, VitaliQ mantiene tu cerebro y tus músculos funcionando al 100%.</p>
+            <div style="margin-bottom: 40px;">
+                <p><i class="fas fa-check" style="color: var(--primary);"></i> Recuperación de Potasio y Magnesio</p>
+                <p><i class="fas fa-check" style="color: var(--primary);"></i> Hidratación profunda a nivel celular</p>
+                <p><i class="fas fa-check" style="color: var(--primary);"></i> Sabor refrescante no pegajoso</p>
+            </div>
+            <a href="tel:0979760990" class="btn-main" style="background: transparent; border: 2px solid var(--primary); color: white;">LLAMAR AHORA</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>¿LISTO PARA TU SIGUIENTE NIVEL?</p>
+        <a href="tel:0979760990" class="phone-big">0979760990</a>
+        <p style="color: #666;">VitaliQ Labs &copy; 2026 | Ecuador</p>
+        <div style="margin-top: 30px; font-size: 1.5rem; opacity: 0.5;">
+            <i class="fab fa-instagram" style="margin: 0 15px;"></i>
+            <i class="fab fa-facebook" style="margin: 0 15px;"></i>
+        </div>
+    </footer>
+
+</body>
+</html>
